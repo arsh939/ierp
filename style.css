@@ -1,0 +1,454 @@
+		//Import google fonts 
+		@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+		@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css');
+
+
+		body {
+            margin: 0px;
+            background: #000;
+			cursor:default;
+        }
+		
+        #app {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+			z-index: 5;
+			mix-blend-mode: screen;
+        }
+        #bg_alt {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0px;
+            top: 0px;
+            z-index: 1;
+            mix-blend-mode: screen;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-origin: padding-box;
+            background-attachment: scroll;
+            box-shadow: 0px 0px 1000px #000 inset;
+        }
+				
+		#logo {
+			z-index: 5;
+			position: absolute;
+            width: 470px;
+            height: 470px;
+            left: 0px;
+            top: 0px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-origin: padding-box;
+		}
+		
+		.footer {
+			text-align: center;	   
+		    position: absolute;
+			padding: 1rem 1rem 0.8rem 1rem;
+			bottom: -5px;
+			left: 50%;
+			transform: translateX(-50%) translateY(-10%);
+			z-index: 4;
+			/*border: 1px solid #000000;*/
+			color: #00adff;
+			font-family: "Josefin Sans", sans-serif;
+			background: rgba(0, 0, 0, 0.7);
+			/*border-radius: 100px;*/
+			opacity: 0;
+		  	   
+		}
+		#discord {
+			font-size:2em;
+			/*color:rgba(14, 111, 255, 0.3);
+			-webkit-text-stroke-width:1px;
+			-webkit-text-stroke-color: rgba(32, 255, 0, 1);*/
+			font-family: "Josefin Sans", sans-serif;
+			opacity: 0;
+		}
+		/*
+		#loader #spinner {
+		  animation: spinner-anim 2s ease-out infinite;
+		}
+		#loader #spinner::before {
+		  animation: spinner-anim 2s ease-out infinite;
+		}
+		#loader #spinner::after {
+		  animation: spinner-anim 1s ease-out infinite;
+		}
+*/
+		#loader {
+		  bottom: 20px;
+		  left: 20px;
+		  z-index: 3;
+		  align-items: center;
+		  justify-content: flex-start;
+		  transition: opacity 0.5s ease-in-out;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;		  
+		  opacity: 0;	
+		
+		}
+
+			
+		#loader #loading-text {
+		  font-size: 1.8em;
+		  color: #00adff;
+		  transition: all 0.5s ease-in-out;
+		}
+		#loader #spinner {
+		  margin-right: 15px;
+		  font-size:30px;
+		  opacity: 0;
+		}	
+		#videobg {
+			position: fixed;
+			top: 0;
+			left: 0;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: 2;
+            mix-blend-mode: screen;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: cover;
+            background-origin: padding-box;
+            background-attachment: scroll;
+            box-shadow: 0px 0px 1000px #000 inset;
+		}		
+		.videogrid {
+		    position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index:5;
+			top: 0px;
+			left: 0px;
+		}
+		#fumo {
+			position: fixed;
+			top: 0;
+			left: 0;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index: 2;
+            mix-blend-mode: screen;
+		}
+		.logo-alt canvas{
+			position: fixed;
+			top: 0;
+			left: 0;
+			min-width: 100%;
+			min-height: 100%;
+			width: auto;
+			height: auto;
+			z-index:5;
+		}
+		.musica {
+			position: fixed;
+			z-index: 10;
+			text-align: center;	   
+		    position: absolute;
+			padding: 1rem 1rem 0.8rem 1rem;
+			top: 15px;
+			left: 310px;
+			transform: translateX(-50%) translateY(-10%);
+			border: 1px solid #000000;
+			/*color: #00adff;*/
+			font-family: "Josefin Sans", sans-serif;
+			background: rgba(0, 0, 0, 0.7);
+			border-radius: 15px;
+			/*font-size:2em;*/	
+			width: 300px;
+		    opacity: 0;
+		}
+		
+		.column {
+		  float: left;
+		}
+
+		.row:after {
+		  content: "";
+		  display: table;
+		  clear: both;
+		}
+		
+h1 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.1vh;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	cursor: default;
+}
+
+h4 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 8vh;
+	font-weight: 400;
+	cursor: default;
+}
+
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1.8vh;
+	font-weight: 300;
+	color: rgb(255, 255, 255);
+	cursor: default;
+	z-index:99;
+}
+
+.playing {
+	background-color: transparent;
+}
+
+.discord, .discord:active, .discord:link {
+	color: #fff;
+}
+
+	.discord:hover {
+		color: #679cff;
+		transition: .1s;
+	}
+
+
+
+.player {
+	position: absolute;
+	top: 1vh;
+	left: 1vh;
+	z-index:99;
+}
+
+.info h1 {
+	margin: 0 0 -1vh;
+	width: 18.2vh;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.info h4 {
+	line-height: 0.2vh;
+	color: rgb(99, 99, 103);
+	width: 18.2vh;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.info h2 {
+	width: 18.2vh;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.button-items {
+}
+
+#slider {
+	width: 25vh;
+	height: 0.4vh;
+	background: rgba(72, 67, 227, 0.2);
+	border-radius: 0.2vh;
+	overflow: hidden;
+	margin-top: 15%;
+	left: 80%;
+	position: relative;
+}
+
+	#slider #elapsed {
+		width: 0vh;
+		height: 0.4vh;
+		background: #8cb4ff;
+		border-radius: 0.2vh;
+	}
+
+	#slider #buffered {
+		width: 0vh;
+		height: 0.4vh;
+		background: none;
+		border-radius: 0.2vh;
+		margin-top: -0.4vh;
+	}
+
+#timer {
+	color: rgb(99, 99, 103);
+	line-height: 0;
+	font-size: 9pt;
+	float: right;
+	font-family: Arial, Sans-Serif;
+	left: 93%;
+	position: relative;
+}
+
+.controls {
+	top: 59%;
+	position: absolute;
+}
+
+	.controls svg:nth-child(2) {
+		margin-left: 0.5vh;
+		margin-right: 0.5vh;
+	}
+
+#play {
+	padding: 0 0.2vh;
+	width: 3.0vh;
+	height: 3.0vh;
+	enable-background: new 0 0 25 25;
+}
+
+	#play g {
+		stroke: rgb(254, 254, 254);
+		stroke-width: 1;
+		stroke-miterlimit: 10;
+	}
+
+		#play g path {
+			fill: rgb(254, 254, 254);
+		}
+
+	#play:hover {
+		cursor: pointer;
+	}
+
+		#play:hover g {
+			stroke: #8cb4ff;
+			cursor: pointer;
+		}
+
+			#play:hover g path {
+				fill: #8cb4ff;
+				cursor: pointer;
+			}
+
+.step-backward {
+	width: 1.8vh;
+	height: 1.8vh;
+	enable-background: new 0 0 25 25;
+	margin-bottom: 0.5vh;
+}
+
+	.step-backward g polygon, .step-foreward g polygon {
+		fill: rgb(254, 254, 254);
+	}
+
+.step-foreward {
+	width: 1.8vh;
+	height: 1.8vh;
+	enable-background: new 0 0 25 25;
+	margin-bottom: 0.5vh;
+}
+
+#pause {
+	enable-background: new 0 0 25 25;
+	width: 3.0vh;
+	height: 3.0vh;
+	position: absolute;
+	margin-left: -4.1vh;
+	cursor: pointer;
+}
+
+	#pause rect {
+		fill: rgb(255, 255, 255);
+	}
+
+	#pause:hover rect {
+		fill: #8cb4ff;
+	}
+
+.expend {
+	padding: 0.05vh;
+	cursor: pointer;
+}
+
+	.expend svg:hover g polygon {
+		fill: #8cb4ff;
+		cursor: pointer;
+	}
+
+.slider {
+	width: 8vh;
+	position: absolute;
+	display: inline-block;
+	margin: 0.4vh 0 0 1vh;
+}
+
+	.slider .volume {
+		width: 6.9vh;
+		height: 0.4vh;
+		background: #8cb4ff;
+		border-top-left-radius: 0.2vh;
+		border-bottom-left-radius: 0.2vh;
+		margin-top: 1.0vh;
+		position: inherit;
+		pointer-events: none;
+		cursor: pointer;
+	}
+
+input[type="range"] {
+	-webkit-appearance: none;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	width: 100%;
+	height: 0.4vh;
+	margin: 0;
+	border: none;
+	border-radius: 1.4vh;
+	padding: 1vh 0.1vh;
+	background: rgba(21, 21, 24, 0);
+	outline: none;
+}
+
+	input[type="range"]::-ms-track {
+		border: inherit;
+		color: rgba(0, 0, 0, 0);
+		background: rgba(0, 0, 0, 0);
+	}
+
+	input[type="range"]::-ms-fill-lower, input[type="range"]::-ms-fill-upper {
+		background: rgba(0, 0, 0, 0);
+	}
+
+	input[type="range"]::-ms-tooltip {
+		display: none;
+	}
+
+	input[type="range"]::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		width: 1.2vh;
+		height: 1.2vh;
+		border: none;
+		border-radius: 0.6vh;
+		background-color: rgb(255, 255, 255);
+	}
+
+	input[type="range"]::-ms-thumb {
+		width: 1.2vh;
+		height: 1.2vh;
+		border-radius: 0.6vh;
+		border: 0;
+		background-color: rgb(255, 255, 255);
+	}
+
+	#mouse {
+		pointer-events: none;
+		position: absolute;
+		z-index: 3;
+		top: 0;
+		left: -100%;
+		background: transparent url('cursor.svg') no-repeat center;
+		background-size: contain;
+		width: 1.4vh;
+		height: 2.0vh;
+	}
+	.player ul {
+		padding-left:5px;
+	}
+		
